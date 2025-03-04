@@ -12,7 +12,7 @@ int main()
         AppendToList(list, initListData[i]);
     printf("Unsorted: ");
     PrintListInfo(list);
-    Bubblesort(list->array, list->Length);
+    // Bubblesort(list->array, list->Length);
     QuickSort(list->array, 0, list->Length-1);
     // QuickSortLomuto(list->array, 0, list->Length-1);
     printf("Sorted: ");
