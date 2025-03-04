@@ -1,0 +1,29 @@
+Lomuto was popularized in Bentley's Programming Pearls.  
+the pivot is the last element itself
+You have 2 pointers from start and add to the second until end - 1
+if the second is more than pivot then swap first with the first and add to first
+then we swap the pivot with the first ptr
+
+
+void QuickSortLomuto(int* array, int start, int end)
+{
+    int pivot = array[end];
+    // Partitioning
+    int leftPos = start;
+    int rightPos = start;
+    while(rightPos < end - 1)
+    {
+        if(rightPos < pivot) {
+            swap(array, rightPos, leftPos);
+            leftPos++;
+        }
+        rightPos++;
+    }
+    swap(array, end, leftPos);
+    // Recursion
+    if(start < rightPos)
+        QuickSort(array, start, rightPos);
+    if(leftPos < end)
+        QuickSort(array, leftPos, end);
+}
+
